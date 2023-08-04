@@ -67,21 +67,30 @@ export default function Calculator() {
     };
 
     const handleKeyboardInput = (e) => {
-        const allowedChars = /[0-9\-*/.=+-]/;
-        if (!allowedChars.test(e.key)) {
-            window.alert("numbers only");
-            e.preventDefault();
-            return;
-        }
-
-        if (e.key === "=" || e.key == "Enter") {
+        const allowedChars = /[0-9\-*/.=+]/;
+      
+        // Check if the pressed key is a numeric key or allowed characters
+        if (!isNaN(e.key) || allowedChars.test(e.key)) {
+          if (e.key === "=" || e.key === "Enter") {
             e.preventDefault();
             Calculate();
-        } else {
+          } else {
             setResult(result.concat(e.key));
+          }
+        } else if (e.key === "Delete" || e.key === "Backspace") {
+          e.preventDefault();
+          deleteScreen();
+        } else if (e.key === "c" || e.key === "C") {
+          e.preventDefault();
+          clear();
+        } else {
+          // Show an alert for other non-numeric keys
+          window.alert("Enter Numbers only");
+          e.preventDefault();
+          return;
         }
-
-    };
+      };
+      
 
     const squareRoot = () => {
         if (result !== "") {
@@ -106,11 +115,11 @@ export default function Calculator() {
             <center>
                 <h1 id='title'><span class="hollo-text"> Calculator App By Vedant </span></h1>
                 <div className="layout">
-                    
-                    
+
+
                     <form>
-                        <input className="current-operand output" type="text" value={result} readOnly
-    onKeyDown={handleKeyboardInput}/>
+                        <input className="current-operand output" type="text" value={result} read
+                            onKeyDown={handleKeyboardInput} />
                     </form>
                     <div className="buttons">
                         <button className="ac span-two" onClick={clear}>AC</button>
@@ -137,7 +146,7 @@ export default function Calculator() {
                         <button onClick={logarithm} id="operators">log</button>
                         <button className="span-two" onClick={Calculate} id="operators">=</button>
                     </div>
-                    
+
                 </div>
 
             </center>
