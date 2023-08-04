@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1);
+  }
+  
+  #title {
+    font-size: 50px;
+    position: relative; /* Add a relative position to the h1 element */
+  }
+  
+  .hollo-text {
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    transition: all 0.3s ease; /* Add a transition for smooth effect */
+  }
+  
+  #title:hover .hollo-text {
+    -webkit-text-fill-color: black; /* Change the text fill color on hover */
+    -webkit-text-stroke-width: 0; /* Remove the text stroke on hover */
+  }
+  
+  
+  
+  
+  .layout {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: black;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  .current-operand {
+    width: 90%;
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #FFDD94;
+    color: #804C2C; /* Lighter shade of brown */
+    border-radius: 20px;
+}
+  
+  .ac {
+    grid-column: span 2;
+  }
+  
+  .span-two {
+    grid-column: span 2;
+  }
+  
+  button:hover {
+    background-color: #804C2C; /* Lighter shade of brown on hover */
+    color: #FFDD94;
+  }
+  
+  button:active {
+    background-color: #d0d0d0;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  #operators{
+    background-color: #A27DFF;
+    color: #420DAB;
+  }
+  #operators:hover {
+    background-color: #420DAB;
+    color: #A27DFF;
+}
